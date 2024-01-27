@@ -38,7 +38,8 @@ class Server:
         return names_of_page
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
-        """"""
+        """returns a dictionary containing key-value pairs of page
+        informations"""
         page_infos = {}
         names_of_page = self.get_page(page, page_size)
 
