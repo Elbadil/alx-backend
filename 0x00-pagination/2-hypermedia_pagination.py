@@ -2,7 +2,7 @@
 """Defining a class Server and a function"""
 import csv
 import math
-from typing import List, Tuple
+from typing import List, Tuple, Any
 
 
 class Server:
@@ -40,7 +40,7 @@ class Server:
     def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
         """returns a dictionary containing key-value pairs of page
         informations"""
-        page_infos = {}
+        page_infos: Any = {}
         names_of_page = self.get_page(page, page_size)
 
         page_infos['page_size'] = len(names_of_page)
