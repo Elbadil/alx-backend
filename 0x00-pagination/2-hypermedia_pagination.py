@@ -2,7 +2,7 @@
 """Defining a class Server and a function"""
 import csv
 import math
-from typing import List, Tuple, Any
+from typing import List, Tuple, Dict, Any
 
 
 class Server:
@@ -37,7 +37,7 @@ class Server:
             names_of_page.append(name)
         return names_of_page
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         """returns a dictionary containing key-value pairs of page
         informations"""
         page_infos: Any = {}
