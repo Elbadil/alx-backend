@@ -47,7 +47,7 @@ class Server:
         page_infos: Any = {}
         names_of_page = self.get_page(page, page_size)
 
-        page_infos['page_size'] = len(names_of_page)
+        page_infos['page_size'] = page_size
         page_infos['page'] = page
         page_infos['data'] = names_of_page
         page_infos['next_page'] = page + 1 if len(names_of_page) > 0 else None
