@@ -46,13 +46,14 @@ class Server:
         informations"""
         page_infos: Any = {}
         names_of_page = self.get_page(page, page_size)
+        total_pages = math.ceil(len(self.dataset()) / page_size)
 
-        page_infos['page_size'] = page_size
+        page_infos['page_size'] = len(names_of_page)
         page_infos['page'] = page
         page_infos['data'] = names_of_page
-        page_infos['next_page'] = page + 1 if len(names_of_page) > 0 else None
+        page_infos['next_page'] = page + 1 if page + 1 <= total_pages else None
         page_infos['prev_page'] = page - 1 if page > 1 else None
-        page_infos['total_pages'] = math.ceil(len(self.dataset()) / page_size)
+        page_infos['total_pages'] = total_pages
 
         return page_infos
 
