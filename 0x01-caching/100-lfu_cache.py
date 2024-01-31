@@ -25,7 +25,6 @@ class LFUCache(BaseCaching):
             self.f_used[key] = 1
 
         self.cache_data[key] = item
-        print(self.f_used)
         if len(self.cache_data) > BaseCaching.MAX_ITEMS:
             least_frequent_value = min(list(self.f_used.values())[:-1])
             for keys in self.f_used.keys():
