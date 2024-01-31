@@ -11,7 +11,9 @@ class LFUCache(BaseCaching):
         self.f_used = {}
 
     def put(self, key, item):
-        """"""
+        """Adds an item to the cache_data dictionary
+        and removes the least frequently used item if the length
+        the dictionary is higher than MAX_ITEMS"""
         if key is None or item is None:
             return
 
