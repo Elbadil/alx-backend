@@ -76,7 +76,6 @@ def before_request():
     """sets globally the user if found"""
     user = get_user()
     if user:
-        print(user)
         g.user = user
 
 
@@ -88,7 +87,7 @@ def get_timezone():
     if url_timezone:
         try:
             timezone(url_timezone)
-            return url_timezone
+            return timezone(url_timezone)
         except UnknownTimeZoneError:
             print(f"Invalid timezone: {url_timezone}")
 
@@ -98,13 +97,13 @@ def get_timezone():
         if users_timezone:
             try:
                 timezone(users_timezone)
-                return users_timezone
+                return timezone(users_timezone)
             except UnknownTimeZoneError:
                 print(f"Invalid timezone: {users_timezone}")
 
     # Timezone from defualt timezone
     default_timezone = Config.BABEL_DEFAULT_TIMEZONE
-    return default_timezone
+    return timezone(default_timezone)
 
 
 if __name__ == '__main__':
