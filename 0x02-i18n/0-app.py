@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """Defining a Flask App"""
 from flask import Flask, render_template
+from typing import Tuple
 
 
 app = Flask(__name__)
 
 
 @app.route('/')
-def index():
+def index() -> Tuple[str, int]:
     """Root route"""
     return render_template('index.html',
                            title='Welcome to Holberton',
