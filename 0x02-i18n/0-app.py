@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def index() -> Tuple[str, int]:
+def index() -> str:
     """Root route"""
     return render_template('index.html',
                            title='Welcome to Holberton',
