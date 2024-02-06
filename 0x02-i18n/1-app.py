@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Defining A Flask App"""
-from flask import Flask, request, render_template
+from flask import Flask, render_template
 from flask_babel import Babel
 
 
@@ -11,11 +11,11 @@ babel = Babel(app)
 class Config(object):
     """Languages Config Class"""
     LANGUAGES = ["en", "fr"]
+    BABEL_DEFAULT_LOCALE = 'en'
+    BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 
 app.config.from_object(Config)
-app.config['BABEL_DEFAULT_LOCALE'] = 'en'
-app.config['BABEL_DEFAULT_TIMEZONE'] = 'UTC'
 
 
 @app.route('/')
