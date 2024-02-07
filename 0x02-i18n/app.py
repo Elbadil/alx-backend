@@ -110,7 +110,7 @@ def get_timezone():
 
     # Timezone from default timezone
     default_timezone = Config.BABEL_DEFAULT_TIMEZONE
-    return default_timezone
+    return timezone(default_timezone)
 
 
 if __name__ == '__main__':
